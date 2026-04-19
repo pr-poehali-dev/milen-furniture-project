@@ -3,43 +3,33 @@ import Icon from '@/components/ui/icon';
 const advantages = [
   {
     icon: 'Factory',
-    title: 'Своё производство',
-    desc: 'Делаем сами — в Кемерово. Никаких складских остатков и перекупщиков. Контролируем каждый этап.',
+    title: 'Собственное производство',
+    desc: 'Вы получите мебель без наценок посредников и перекупщиков — напрямую с завода.',
   },
   {
-    icon: 'Ruler',
-    title: 'Любые размеры',
-    desc: 'Нестандартный проём, маленькая комната, большой зал — подберём конфигурацию или сделаем с нуля.',
+    icon: 'MapPin',
+    title: 'Салоны в Кузбассе',
+    desc: 'Четыре шоурума в Кемерово, Новокузнецке и Ленинске-Кузнецком — приходите потрогать вживую.',
+  },
+  {
+    icon: 'Palette',
+    title: 'Любые стили и конфигурации',
+    desc: 'Производим диваны и кровати различных стилей, конфигураций и на любой вкус.',
   },
   {
     icon: 'Truck',
-    title: 'Доставка и сборка бесплатно',
-    desc: 'Привезём, соберём и поднимем на любой этаж. Вывезем старую мебель — тоже бесплатно.',
+    title: 'Доставка и сборка',
+    desc: 'Привезём, соберём и поднимем на любой этаж. Вывезем старую мебель — бесплатно.',
   },
   {
     icon: 'CreditCard',
     title: 'Оплата после доставки',
-    desc: 'Принимаем деньги, когда вы убедились, что всё сделано правильно. Рассрочка без процентов.',
+    desc: 'Принимаем оплату только после того, как вы убедились, что всё сделано правильно.',
   },
   {
     icon: 'Shield',
     title: 'Гарантия до 3 лет',
-    desc: 'Обслуживаем мебель и после окончания гарантии. Приедем и починим, если что-то пойдёт не так.',
-  },
-  {
-    icon: 'Box',
-    title: '3D-визуализация',
-    desc: 'Покажем, как будет выглядеть ваша мебель в интерьере, до начала производства.',
-  },
-  {
-    icon: 'Video',
-    title: 'Видеоконсультация',
-    desc: 'Не нужно ехать в салон — проконсультируем онлайн, подберём ткань и размеры по видеосвязи.',
-  },
-  {
-    icon: 'Dumbbell',
-    title: 'Усиленная конструкция',
-    desc: 'По запросу укрепим каркас и пружины под повышенную нагрузку — для долгой службы без ремонта.',
+    desc: 'Обслуживаем мебель и после окончания гарантийного срока — ремонт и замена деталей.',
   },
 ];
 
@@ -47,28 +37,28 @@ const Advantages = () => {
   return (
     <section className="section-padding bg-white" id="advantages">
       <div className="container-wide">
-        {/* Section header */}
-        <div className="max-w-xl mb-14">
-          <p className="text-sand text-sm font-semibold tracking-widest uppercase font-body mb-3">
-            Наши преимущества
-          </p>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold text-graphite leading-tight">
-            Почему выбирают именно нас
-          </h2>
+        {/* Section heading — bracket deco like design-cube */}
+        <div className="text-center mb-14">
+          <div className="section-heading justify-center">
+            <div className="bracket-deco" />
+            <div>
+              <div className="text-4xl md:text-5xl font-black uppercase">ПРЕИМУЩЕСТВА</div>
+              <div className="text-base font-semibold uppercase tracking-widest text-gray-500 mt-1">РАБОТЫ С НАМИ</div>
+            </div>
+          </div>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {advantages.map((item, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-gray-200">
+          {advantages.map((item) => (
             <div
               key={item.title}
-              className="group p-6 rounded-2xl bg-milk border border-beige-dark/40 card-hover"
+              className="border-b border-r border-gray-200 p-8 group hover:bg-blue-light transition-colors duration-200"
             >
-              <div className="w-12 h-12 rounded-xl bg-beige flex items-center justify-center mb-5 group-hover:bg-sand/15 transition-colors duration-300">
-                <Icon name={item.icon} size={22} className="text-sand" fallback="Star" />
+              <div className="w-10 h-10 border-2 border-green-brand flex items-center justify-center mb-5">
+                <Icon name={item.icon} size={18} className="text-green-brand" fallback="Star" />
               </div>
-              <h3 className="font-semibold text-graphite text-base mb-2 font-body">{item.title}</h3>
-              <p className="text-warm-gray text-sm leading-relaxed font-body">{item.desc}</p>
+              <h3 className="font-bold text-[15px] uppercase tracking-wide mb-3">{item.title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>

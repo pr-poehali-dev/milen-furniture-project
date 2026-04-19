@@ -1,69 +1,64 @@
 import Icon from '@/components/ui/icon';
 
 const features = [
-  'По вашим точным размерам — под любой проём или комнату',
+  'По точным размерам — под любой проём или комнату',
   'По фото из интернета или журнала',
   'По вашему эскизу или дизайн-проекту',
-  'Любая ткань, цвет и фактура из каталога',
+  'Любая ткань, цвет и фактура',
   'Усиленный каркас под повышенную нагрузку',
   'Предварительная 3D-визуализация',
 ];
 
 const CustomOrder = () => {
   return (
-    <section className="section-padding bg-graphite grain-overlay" id="custom">
-      <div className="container-wide relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section className="bg-black py-20 md:py-28" id="custom">
+      {/* Dark background with leaf pattern like design-cube showroom section */}
+      <div className="container-wide">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left */}
           <div>
-            <p className="text-sand text-sm font-semibold tracking-widest uppercase font-body mb-3">
-              Индивидуальный заказ
+            <p className="text-green-brand text-xs font-bold tracking-widest uppercase mb-4">
+              ИНДИВИДУАЛЬНЫЙ ЗАКАЗ
             </p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold text-white leading-tight mb-6">
-              Если нужного нет
+            <h2 className="text-4xl md:text-5xl font-black uppercase text-white leading-tight mb-6">
+              ИЗГОТОВИМ
               <br />
-              <em className="not-italic text-sand">— мы сделаем</em>
+              <span className="text-green-brand">НЕ ТОЛЬКО МЕБЕЛЬ</span>
+              <br />
+              — СОЗДАДИМ ИНТЕРЬЕР
             </h2>
-            <p className="text-white/70 text-base font-body leading-relaxed mb-8 max-w-md">
-              Нестандартная планировка, особые пожелания, точное совпадение с интерьером — 
-              любой из этих поводов достаточен, чтобы сделать мебель специально для вас.
+            <p className="text-white/60 text-base leading-relaxed mb-8 max-w-md">
+              В нашей команде есть опытные дизайнеры, которые создадут для вас проект квартиры или дома вашей мечты.
+              Мы делаем не просто красивые картинки, а дизайн, который реально реализовать.
             </p>
 
             <ul className="space-y-3 mb-10">
               {features.map((f) => (
                 <li key={f} className="flex items-start gap-3">
-                  <Icon name="Check" size={16} className="text-sand flex-shrink-0 mt-0.5" />
-                  <span className="text-white/80 text-sm font-body">{f}</span>
+                  <Icon name="Check" size={15} className="text-green-brand flex-shrink-0 mt-0.5" />
+                  <span className="text-white/70 text-sm">{f}</span>
                 </li>
               ))}
             </ul>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#contact" className="btn-sand px-8 py-4 rounded-xl text-base font-semibold font-body text-center">
-                Обсудить проект
-              </a>
-              <a
-                href="tel:+73842000000"
-                className="px-8 py-4 rounded-xl text-base font-semibold font-body text-center border-2 border-white/30 text-white hover:bg-white/10 transition-all duration-300"
-              >
-                Позвонить
-              </a>
+              <a href="#contact" className="btn-green text-center">Обсудить проект</a>
+              <a href="tel:+73842000000" className="btn-outline-black border-white/40 text-white hover:bg-white hover:text-black text-center" style={{ borderColor: 'rgba(255,255,255,0.3)' }}>Позвонить</a>
             </div>
           </div>
 
           {/* Right: image */}
           <div className="relative">
-            <div className="rounded-2xl overflow-hidden aspect-[4/5]">
+            <div className="overflow-hidden aspect-[3/4]">
               <img
                 src="https://cdn.poehali.dev/projects/0f55b065-18d0-4e34-b9d4-06970c3f84ce/files/ac6dcd3b-6f29-4a61-bfa7-8d2a6e8a2778.jpg"
-                alt="Производство мягкой мебели на заказ"
+                alt="Производство мягкой мебели"
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* Floating badge */}
-            <div className="absolute -bottom-5 -left-5 bg-sand rounded-2xl p-5 shadow-xl max-w-[200px]">
-              <p className="font-display text-3xl font-semibold text-white mb-1">5 дней</p>
-              <p className="text-white/80 text-xs font-body leading-snug">минимальный срок изготовления</p>
+            <div className="absolute bottom-6 left-6 bg-green-brand text-white p-5">
+              <div className="text-3xl font-black">от 5 дней</div>
+              <div className="text-white/80 text-xs uppercase tracking-wide mt-1">срок изготовления</div>
             </div>
           </div>
         </div>

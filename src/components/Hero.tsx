@@ -1,93 +1,74 @@
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-milk">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://cdn.poehali.dev/projects/0f55b065-18d0-4e34-b9d4-06970c3f84ce/files/a1bee713-f30a-4550-991e-cef8a3d7aea0.jpg"
-          alt="Мягкая мебель Милена"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-graphite/75 via-graphite/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-graphite/30 to-transparent" />
-      </div>
+    <section className="pt-16 md:pt-20 bg-blue-light min-h-screen flex items-center overflow-hidden">
+      <div className="w-full">
+        <div className="flex flex-col lg:flex-row items-center">
+          {/* Left: text */}
+          <div className="w-full lg:w-[45%] px-6 md:px-12 lg:pl-16 lg:pr-8 py-16 lg:py-0 flex flex-col justify-center">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[1] mb-6 animate-fade-in-up" style={{ opacity: 0 }}>
+              <span className="text-green-brand">СТИЛЬНЫЕ</span>
+              <br />
+              ДИВАНЫ
+              <br />
+              <span className="text-[0.85em]">И КРОВАТИ</span>
+              <br />
+              <span className="text-[0.85em]">НА ЗАКАЗ</span>
+            </h1>
 
-      {/* Content */}
-      <div className="container-wide relative z-10 pt-24 pb-12">
-        <div className="max-w-2xl">
-          {/* Badge */}
-          <div
-            className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 rounded-full px-4 py-1.5 mb-8 animate-fade-in-up"
-            style={{ opacity: 0 }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-sand flex-shrink-0" />
-            <span className="text-white/90 text-xs font-medium tracking-wide font-body">
-              Производитель с 2006 года · Кемерово
-            </span>
+            <div className="bg-white/80 p-5 mb-8 max-w-sm animate-fade-in-up delay-200" style={{ opacity: 0 }}>
+              <p className="text-base text-gray-700 italic leading-relaxed">
+                Изготовим мебель на собственном производстве от 5 дней, с дизайнерским подходом под ваш интерьер и бюджет
+              </p>
+            </div>
+
+            <div className="flex gap-4 flex-wrap animate-fade-in-up delay-300" style={{ opacity: 0 }}>
+              <a href="#works" className="btn-black">Смотреть каталог</a>
+              <a href="#contact" className="btn-outline-black">Рассчитать стоимость</a>
+            </div>
+
+            {/* Stats */}
+            <div className="flex gap-8 mt-10 animate-fade-in-up delay-400" style={{ opacity: 0 }}>
+              {[
+                { v: '18+', l: 'лет работы' },
+                { v: 'от 5', l: 'дней срок' },
+                { v: '4', l: 'салона' },
+              ].map(({ v, l }) => (
+                <div key={l}>
+                  <div className="text-2xl font-black text-green-brand">{v}</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide mt-0.5">{l}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Heading */}
-          <h1
-            className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.05] mb-6 animate-fade-in-up delay-100"
-            style={{ opacity: 0 }}
-          >
-            Мебель, которая
-            <br />
-            <em className="not-italic text-sand">сделана под вас</em>
-          </h1>
+          {/* Right: two photos overlapping like design-cube */}
+          <div className="w-full lg:w-[55%] relative h-[420px] md:h-[560px] lg:h-screen flex-shrink-0">
+            {/* Main photo — left/center */}
+            <div className="absolute left-0 top-0 bottom-0 w-[65%] overflow-hidden">
+              <img
+                src="https://cdn.poehali.dev/projects/0f55b065-18d0-4e34-b9d4-06970c3f84ce/files/a1bee713-f30a-4550-991e-cef8a3d7aea0.jpg"
+                alt="Диван на заказ"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-          {/* Subheading */}
-          <p
-            className="text-white/80 text-lg md:text-xl font-body leading-relaxed mb-10 max-w-xl animate-fade-in-up delay-200"
-            style={{ opacity: 0 }}
-          >
-            Диваны и кровати по вашим размерам, фото или эскизу.
-            Собственное производство — без посредников, с гарантией до 3 лет.
-          </p>
+            {/* Green block + second photo — right overlapping */}
+            <div className="absolute right-0 top-0 bottom-0 w-[45%] bg-green-brand">
+              <img
+                src="https://cdn.poehali.dev/projects/0f55b065-18d0-4e34-b9d4-06970c3f84ce/files/33a0d342-c13f-4536-8c8d-96840ef38d2f.jpg"
+                alt="Кровать на заказ"
+                className="w-full h-[55%] object-cover"
+              />
+            </div>
 
-          {/* CTAs */}
-          <div
-            className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300"
-            style={{ opacity: 0 }}
-          >
-            <a
-              href="#contact"
-              className="btn-sand px-8 py-4 rounded-xl text-base font-semibold font-body text-center"
-            >
-              Рассчитать стоимость
-            </a>
-            <a
-              href="#custom"
-              className="px-8 py-4 rounded-xl text-base font-semibold font-body text-center border-2 border-white/60 text-white hover:bg-white/15 transition-all duration-300"
-            >
-              Заказать по фото / эскизу
-            </a>
-          </div>
-
-          {/* Stats */}
-          <div
-            className="flex flex-wrap gap-8 mt-14 animate-fade-in-up delay-400"
-            style={{ opacity: 0 }}
-          >
-            {[
-              { value: '18+', label: 'лет на рынке' },
-              { value: 'от 5 дней', label: 'срок изготовления' },
-              { value: 'до 3 лет', label: 'гарантия' },
-              { value: '4 салона', label: 'в Кузбассе' },
-            ].map((stat) => (
-              <div key={stat.label} className="flex flex-col">
-                <span className="font-display text-3xl font-semibold text-sand">{stat.value}</span>
-                <span className="text-white/70 text-sm font-body mt-0.5">{stat.label}</span>
-              </div>
-            ))}
+            {/* CTA button overlapping bottom of photos */}
+            <div className="absolute bottom-0 right-[5%] translate-y-[1px]">
+              <a href="#works" className="btn-black block text-center px-10 py-5 text-sm">
+                СМОТРЕТЬ ПОРТФОЛИО
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-fade-in delay-600" style={{ opacity: 0 }}>
-        <span className="text-white/50 text-xs tracking-widest uppercase font-body">Смотреть</span>
-        <div className="w-px h-12 bg-gradient-to-b from-white/40 to-transparent" />
       </div>
     </section>
   );
